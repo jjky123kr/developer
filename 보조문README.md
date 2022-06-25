@@ -7,14 +7,15 @@ for(int i=1;;i++) {
 			if(i==100) break;
  i++ 증감식 
  
- *for문 은 반복문 이다. 
+ *for문 은 반복문 
+ *무한 루프를 할때 사용한다. (for문 보다는 While문을 사용한다.)
  *break을 쓸때는 아래쪽에 써야 한다. 
  *증감식 사용
  
  int i=1;
-while(true) {
+while(true) {    //     참인 조건식을 설정한다
 	System.out.println(i+"무한루프");
-	if(i==100) break;
+	if(i==100) break;   <조건식>으로 많이 사용이 된다. 
   i++;
 	  	}
 ``````
