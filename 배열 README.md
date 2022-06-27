@@ -1,10 +1,12 @@
 # 배열 Array <참조형>
+
  * 힙(heap)에 메모리 값을 저장한다. 
  * 힙(heap)공간을 늘릴수 있다. = new 
  * 동일한 자료형의 데이터 값을 저장하기 위한 (정적인 자료구조 )=>크기가 정해져 있다.
  * 변수를 확장 시킨 것 : 변수를 많이 사용할 경우 배열을 사용 할때 간결하게 작성 할수 있다.
  * 자동으로 초기값이 0으로 된다. <기본자료형이라도>
  * 효율적적으로 사용이 된다. (코드가 줄 일수 있다.)
+ * * 순차적인 배열 리스트 경우에 향상된 for문 으로 사용된다. 
 #### 1차원 배열 :값이 정해져 있지 않은 경우
 ``````
 
@@ -170,6 +172,86 @@ sum+=scores[i];
 return sum;  //260
 }
 }
+``````````````
+#### 배열에서 기본 for문 과 향상 for문 
+ 항상된for문,확장for문	
+
+* 형식: for(변수: 순차적인 자료 구조(배열,컬렉션 list)){
+	실행된 문장;                 
+``````````
+int[] score= {95,71,84,93,87};
+int sum=0;
+for(int i=0; i<score.length; i++) {
+sum+= score[i];
+}
+System.out.println("총합:"+sum);
+		
+
+//확장 for문
+int sum1 =0;
+for(int s:score) {
+sum+=s;
+	}
+ System.out.println("총합:"+sum1);
+
+	}
+}
+````````````
+####  커맨드 라인 입력
+##### 절대값을 구해주는 메소드 와 String 문에서 int형 변환
+* 예문
+```````````
+절대값을 구해주는 메소드
+static int abs(int data) {
+if(data<0)
+ data=-data;
+  return data;
+  
+ public static void main(String[] args) {
+// TODO Auto-generated method stub
+		
+//args[0]="-10", args[1]= "-20" 
+System.out.println("args[0]:"+args[0]);
+System.out.println("args[1]:"+args[1]);
+		
+//args[0]= "10" -> -10 : 형변환
+*int num = Integer.parseInt(args[0]); *
+ System.out.println("절대값:"+abs(num));		
+}
+}
+ 
+ **
+ 콘솔에서 실행 할때  run confingurations (run을 누렸을때 클릭) 
+  Arguments 에서 program arguments  10 -20 적용을 한다. 
+  JAVA ArrayEX07 -10 -20  값을 저장할때 
+ 
+_ Wrapper를 이용한 자료형 변환_ 
+ 문자형에서 -> int 형으로 전달   parseInt 
+ Wrapper를 이용한 자료형 변환 (기본자료형 <---> 참조형 )
+ ex) int  <--->  String    (90%많이 사용한다.)    Wrapper 클래스(박싱과 언박싱)
+     int n = Integer.parseInt("20");
+`````````````
+### 배열 복사 
+````````````
+//p167~168
+//  배열 복사 for 문
+		
+		   int[]oldArray= {10,20,30};    //원복 배열
+		   int[] newArray= new int[5];  //새로운 배열
+		   
+		   for(int i=0; i<oldArray.length;i++) {
+			   newArray[i]=oldArray[i];      // oldArray에서 newArra 값이 전달된다. 
+		   }
+		   // 복사된 배열 출력
+               for(int i: newArray) {
+            	   System.out.println(i+"\t");
+               }
+	}
+
+}
+
+  
+  
 
 
 
