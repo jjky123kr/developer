@@ -50,14 +50,40 @@ System.out.println(str[0]);     //자바
 System.out.println(str[1]);    // 오라클
 System.out.println(str[2]);    // 스프링
 
-```````
+예문
+``````````
+ //키보드를 이용해서 정수 5개를 입력 받은후 int형
+ // 배열에 저장한다. 이때 배열에 저장된 값중에서
+ // 최대값과 최소값을 구하는 프로그램을 작성하세요?
+ 
+ int max, min;
+		int[] s = new int[5];
 
-### 2차원 배열 : 배열 선언과 동시에 초기화를 할때 주로 사용
-###    (배열에 할당될 값이 정해져 있는 경우)
+		System.out.print("정수 5개를 입력 하세요?");
+		Scanner sc = new Scanner(System.in);
+
+		for (int i = 0; i < s.length; i++) {
+			s[i] = sc.nextInt();
+		}
+		max = s[0];
+		min = s[0];
+		for (int i = 1; i < s.length; i++) {
+			if (max < s[i]) max = s[i];
+			if (min > s[i]) min = s[i];
+		}
+		System.out.println("max=" + max);
+		System.out.println("min=" + min);
+	}
+
+}
+ 
+```````````
+###### 2차원 배열 : 배열 선언과 동시에 초기화를 할때 주로 사용
+######             (배열에 할당될 값이 정해져 있는 경우)
   
 * 초기값이 필요하다.  
 * 배열의 크기를 구하는 속성 : _(length)_
-``````    
+``````````    
 int[][]    score    =   new   int[5][3];
  자료형    배열변수     연산자     [5]:행
    		      [3]:열
@@ -92,5 +118,64 @@ int[][]    score    =   new   int[5][3];
 
   System.out.println(dd[i]+"\t");
   System.out.println();
-	    	 
+  
+
+  //배열에 저장된 데이터 중에서 최대값과 최소값을 구하는 프로그램 작성	
+		
+    double[]data= {9.5,7.0,13.6,7.5,10.5};
+		
+   double max,min;
+   max=data[0];    //9.5
+   min=data[0];     //9.5
+		
+   for(int i=1;i<data.length;i++) {
+ if(data[i]>max)  max= data[i];
+ if(data[i]<min)  min= data[i];
+			
+}
+      System.out.println("max="+max);
+      System.out.println("min="+min);
+	}
+
+}
+
+`````````````
+
+
+* 배열에서 메소드 호출 하는 방식
+// 교재  p154  
+	int[]scores;
+	scores= new int[] {80,90,87};
+	//int[] scores = new int [] {80,90,87};
+		
+	//int[]scores;
+		
+	int sum1=0;
+	for(int i=0;i<3; i++) {
+	sum1+= scores[i];
+}
+ System.out.println("총합:"+sum1);      //총합;260
+		
+// add 메소드를 호출해서 리턴된 총합을 sum2에 저장
+		
+int sum2= add(new int[] {83,90,87});
+ System.out.println("총합:"+sum2);
+		
+}//main()end
+	
+// 사용자 저의 메소드 : 합을 구해주는 메소드  
+public static int add(int[] scores){
+//                         주소값              
+	int sum=0;
+for(int i=0; i<3; i++) {
+sum+=scores[i];
+}
+return sum;  //260
+}
+}
+
+
+
+
+
 
