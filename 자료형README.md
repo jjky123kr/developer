@@ -60,6 +60,8 @@ System.out.println("b2="+b2);
 ````
 3.참조형(Reference Type)
 
+주소 값을 저장한다. 
+
 클래스, 배열, 인터페이스(Collection)
 
 ex) String s1 = "50";
