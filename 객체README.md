@@ -1,6 +1,8 @@
-# 객체지향
-#### 객체는 필드(속성) 과 메소드(동작)로 구성된 자바 객체로 모델링 가능
-#### 객체 지향 프로그래밍의 특징 
+# 객체지향 프로그램 
+### 부품 객체를 먼저 만들고 이것들을 하나씩 조립해 완성된 프로그램 기법
+#  객체
+### 필드(속성) 과 메소드(동작)로 구성된 자바 객체로 모델링 가능
+# 객체 지향 프로그래밍의 특징 
 ## 1. 캡슐화
  #### 1).객체의 필드, 메소드를 하나로 묶고, 실제 구현 내용을 감추는 것
  #### 2)외부 객체는 객체 내부 구조를 알지 못하며 객체가 노출해 제공하는 필드와 메소드만 이용 가능
@@ -22,11 +24,12 @@
 #### 2)유지보수 용이
 
 ### 객체 와 클래스
-##### 자바: 클래스 -> 객체 
+##### 현실세계: 설계도-> 객첵
+#####     자바: 클래스 -> 객체 
 
 ### 클래스 이름
 *자바 식별자 작성 규칙
-* 하나 이상의 문자로 이루어져야 한다.
+*하나 이상의 문자로 이루어져야 한다.
 *첫 번째 글자는 숫자가 올 수 없다.
 * 특수 문자는 사용할 수 없다. 
 * 자바 키워드는 사용할 수 없다. 
@@ -44,44 +47,44 @@
 *new 연산자는 객체를 생성 후 객체  생성 리턴
 
 #### 클래스의 구성
-*필드 생성자 메소드 
+*필드 ,생성자, 메소드 
 *필드는 객체의 데이터가 저장되는 곳
 *생성자는 객체 생성시 초기와 역할
 *메소드 객체의 동작에 해당하는 실행 블록
 
-``````````````````````````
-// 사용자 정의 클래스(자료형)
 
-	int age;  //멤버변수,필드(field),전역변수 : heap힙 메모리에 저장(자동 초기값0;값)
-	          // : 메소드 바깥쪽에 정의되는 변수
-	public Animal(){  //기본 생성자(Default constructor) //클래스명과 동일
+##### 사용자 정의 클래스(자료형)
+````
+    int age;  //멤버변수,필드(field),전역변수 : heap힙 메모리에 저장(자동 초기값0;값)
+          // : 메소드 바깥쪽에 정의되는 변수
+   public Animal(){  //기본 생성자(Default constructor) //클래스명과 동일
 	                  // :매개 변수가 없는 생성자 ,생성자의 역할은 필드값을 초기값 생성한다. 컴파일할때 없어도 자동으로 된다.
-		System.out.println("생성자 호출 성공");
+   System.out.println("생성자 호출 성공");
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    public static void main(String[] args) {
+	// TODO Auto-generated method stub
        
-		int a=10;   // 지역변수: stack 메모리 영역에 저장
+   int a=10;   // 지역변수: stack 메모리 영역에 저장
 		
-		String str = new String("자바");
+   String str = new String("자바");
 		
-		Animal  a1 =       new    Animal();
-//      클래스  레퍼런스 변수  연산자    생성자 호출
+  Animal  a1 =       new    Animal();
+  클래스  레퍼런스 변수  연산자  생성자 호출
 		
-	//	System.out.println();         // 오류
-		System.out.println(a1.age);   //0
-		a1.age=5;
-		System.out.println(a1.age);  //5
-		
-	    Animal   a2   = new  Animal();
-	    System.out.println(a2.age);
-	    //                주소값
+	System.out.println();         // 오류
+	System.out.println(a1.age);   //0
+	a1.age=5;
+	System.out.println(a1.age);   //5
+	
+    Animal   a2   = new  Animal();
+       System.out.println(a2.age);
+	                   주소값
 	    
 	    
-	    if(a1==a2) {     //주소값 비교
-	    	System.out.println("같은주소");
-	    }else {
-	    	System.out.println("다른 주소");
+    if(a1==a2) {                    //주소값 비교
+	   System.out.println("같은주소");
+    }else {
+	   System.out.println("다른 주소");
 	    }
 	}
 
