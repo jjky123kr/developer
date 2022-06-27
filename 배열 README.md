@@ -55,13 +55,14 @@ System.out.println(str[2]);    // 스프링
 ``````````
 예문
 
-키보드를 이용해서 정수 5개를 입력 받은후 int형 배열에 저장한다. 이때 배열에 저장된 값중에서  최대값과 최소값을 구하는 프로그램을 
+키보드를 이용해서 정수 5개를 입력 받은후 int형 배열에 저장한다. 이때 배열에 저장된 값중에서 최대값과 최소값을 구하는 프로그램을 
 작성하세요?
  
- int max, min;
-		int[] s = new int[5];
 
-		System.out.print("정수 5개를 입력 하세요?");
+         int max, min;
+         int[] s = new int[5];
+
+      System.out.print("정수 5개를 입력 하세요?");
 		Scanner sc = new Scanner(System.in);
 
 		for (int i = 0; i < s.length; i++) {
