@@ -421,10 +421,10 @@ public class ComputerEx {
 
 		Computer com = new Computer ();
 		int[] values1= {1,2,3,};
-		int result1=com.sum1(values1); // sum1(호출)
+		int result1=com.sum1(values1); // sum1(호출)     
 		System.out.println("result1:"+result1);
 		
-		int result2 = com.sum1(new int[] {1,2,3,4,5,});
+		int result2 = com.sum1(new int[] {1,2,3,4,5,});    // 변수 형태가 아니라 주소를 호출하고,참조할 주소가 없으면  힙메모리에 해지 한다. 
 		System.out.println("result1:"+result2);
 		
 		int result3 = com.sum1(new int[] {1,2,3,});
