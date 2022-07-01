@@ -6,7 +6,7 @@
 
 # String 클래스
 ## ==: 참조하는 주소를 비교 
-````````````
+```
 1. 주소 값이 같다
 	String str1="자바";
 	String str2="자바";
@@ -28,7 +28,7 @@
 	System.out.println("다른 주소");   //다른 주소		
        }
        
-``````````````````````````````````
+```
 ## equals():참조하는 값(데이터)을 비교  (많이 사용하다.)
    
       if(str1.equals(str2)) {     //참조하는 값(데이터)을 비교
@@ -63,7 +63,7 @@
 	}
 ``
 #  String + 가 연결이 왼다.  주소값을이 연결 시킨다. 
-`````````````````````````````````````````````````````````
+```
 package p2022_07_01;
 
 public class ConnectString {
@@ -85,8 +85,7 @@ public class ConnectString {
     }
 }
 
-
-```````````````````````````````````````````````````````````````````````
+```
 ##  touppercaes 
 ``````````````````````````````````````````````````````````````````````
 package p2022_07_01;
@@ -114,7 +113,7 @@ class StringTest01 {
 // 재사용을 하지 못하는 값은 지우고,새로운 변수에 다시 값을 할당해야지 ,재사용이 가능하다. 
 //
 
-`````````````````````````````````````````````````````````````````````````````````````
+```
 ## length, char    메소드 
 * length은 문자의 길이를 구하는 역할
 * char은 문자 한글자 추출하는 역할
@@ -124,55 +123,55 @@ public class FindBlankIndex {
     public static void main( String[] args ) {
 		
 	String message = "Java program creates many objects.";
-	// message의 길이를 구함.(문자의 길이를 구하는(글자수)length)
+                                                              message의 길이를 구함.(문자의 길이를 구하는(글자수)length)
 	int len = message.length();
 
 	System.out.println(len);  // len = 34;
 
-	// message 중에서 ' '을 찾음
+	                                                        message 중에서 ' '을 찾음
 	for( int i=0 ; i<len ; i++ ) {
 	    char c = message.charAt( i );
-		if( c == ' ' ) {//  공백의 인덱스 번호를 구해서 출력
+		if( c == ' ' ) {       공백의 인덱스 번호를 구해서 출력
 		    System.out.println( "index = " + i );
 		}
 	}//for end
     }
 }
-//배열의 크기는(s).length은 속성 , String은 length(); 문자의 길이(띄어쓰기,"문자등도 같이 ) 
-//charAt은 문자 한글자 추출하는 역할 
-`
+배열의 크기는(s).length은 속성 , String은 length(); 문자의 길이(띄어쓰기,"문자등도 같이 ) 
+charAt은 문자 한글자 추출하는 역할 
+```````````````````````````````````````````````````````````````````````````````````````````
 ## Indexof 특정 문자의 인덱스 번호
 package p2022_07_01;
 
 public class IndexOfTest {
 	public static void main( String[] args ) {
 	
-//		indexof(); 특정 문자의 인덱스 번호를 구한다. 
+	indexof(); 특정 문자의 인덱스 번호를 구한다. 
 		
 	String message = "Java program creates many objects.";
-	//가장 먼저 나오는 a의 인덱스 번호 
+	                                         가장 먼저 나오는 a의 인덱스 번호 
 	int index1 = message.indexOf( 'a' ); 
-	//10진수 아스키코드 97 에 해당되는 (a)의 인덱스 번호를 구함 (97='a',65='A')
+	                                         10진수 아스키코드 97 에 해당되는 (a)의 인덱스 번호를 구함 (97='a',65='A')
 	int index2 = message.indexOf( 97 );//
 
 	System.out.println( index1 );
 	System.out.println( index2 );
 
-	//index번호 13번째 이후에서 (가장먼저 )a를찾음 ,a의 인덱스 번호를 구함 
+	 index번호 13번째 이후에서 (가장먼저 )a를찾음 ,a의 인덱스 번호를 구함 
 	int index3 = message.indexOf( 'a', 13 ); 
 	System.out.println( index3 );
-	//가장먼저 나오는 'av'의 인덱스 번호
+	 가장먼저 나오는 'av'의 인덱스 번호
 	int index4 = message.indexOf( "av" );   
 	System.out.println( index4 );
-//    인덱스 번호12번 이후에서 'man'의 인덱스 번호 구하라
-	int index5 = message.indexOf( "man", 12 );
+                                                  
+	int index5 = message.indexOf( "man", 12 );   인덱스 번호12번 이후에서 'man'의 인덱스 번호 구하라
 	System.out.println( index5 );
-	// 찾고자 하는 인덱스 번호가 없으면(-1)리턴 출력
+                                                     찾고자 하는 인덱스 번호가 없으면(-1)리턴 출력
 	int index6 = message.indexOf( "java" );
 	System.out.println( index6 );
     }
 }
-``````````````````````````````````````````````````````````````````````````````````````
+```````````````````````````````````````````````````````````````````````````````````````
 ### 1.Trim(): 문자열  좌우의 공백을 없애주는 역할 
 ```````````````````````````````````````````````````````````
 package p2022_07_01;
@@ -191,7 +190,7 @@ public class TrimTest {
     }
 }
 // 공백도 메모리에 차지한다. 
-````````````````````````````````````````````````````````````````````````
+`````````````````````````````````````````````````````````````````````````````````````````````````
 ### substring 메소드 
 `````````````````````````````````
 
