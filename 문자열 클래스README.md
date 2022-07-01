@@ -188,8 +188,151 @@ public class InsertStringBuffer {
 }
  insert 지정된 삽입된 위치에 집어 넣는다.
 ``````````````````````````````````````````````````````````````````````````````````````
-##  StringTokenizer 클래스
+##  StringTokenizer 클래스 :   문자열 분리 방법
 ````````````````````````
+import를 사용해야 한다. (java.uill에 없어서)
+import java.util.*;
+class StringTest04 {
+
+  public static void main(String[] args) {
+    StringTokenizer str = new StringTokenizer("이순신#을지문덕#강감찬#광개토대왕", "#"); 
+  
+////  nextToken() : 토큰을 구하는 메소드    
+//    System.out.println(str.nextToken());// 이순신
+//    System.out.println(str.nextToken());// 을지문덕
+//    System.out.println(str.nextToken());// 강감찬
+//    System.out.println(str.nextToken());// 광개토대왕
+//    System.out.println(str.nextToken());// 예외발생 (가져올 토큰이 없을때)
+//    
+	//파싱된 문자열이 모두 몇 개인지 되는지 알려줌 
+    int cnt = str.countTokens();  // 토근이 몇개 인지 역할
+    System.out.println("파싱할 문자열의 총갯수-> " + cnt);
+
+    System.out.println(str.nextToken());
+    while(str.hasMoreTokens()){        //토큰이 있으면  
+     System.out.print(str.nextToken()+"\t");//차례대로 파싱된 문자열을 얻어온다.
+}
+
+  }  // main() end 
+  }
+  
+//  StringTokenizer(String str(문자열), String delim(구분기호'#'))형식 사용  
+//  hasMoreTokens 토근이 있는 없는 알려주는 기능 만약 토큰이 있으면 while 반복문으로 확인해서 갖고 온다. 
+
+2.
+import java.util.StringTokenizer;
+
+public class StringTokenizerTest1 {
+
+	public static void main(String[] args) {
+	
+		String source1="111-111|강원도|춘천시|퇴계동";
+		StringTokenizer st1=new StringTokenizer(source1,"|");
+		
+		String zip=st1.nextToken();  //우편번호:111-111
+		String dou=st1.nextToken();  //강원도
+		String si=st1.nextToken();   //춘천시
+		String dong=st1.nextToken(); //퇴계동 
+
+		System.out.println("우편번호:" +zip);
+		System.out.println("도:" +dou);
+		System.out.println("시:" +si);
+		System.out.println("동:" +dong);
+	}
+
+}// 문자를 잘라서 토근을 가져온다.  
+
+3.  
+import java.util.StringTokenizer;
+public class StringTokenizerTest2 {
+
+public static void main(String[] args) {
+	
+String source1="한국 미국 태국 중국 이란";
+StringTokenizer st1=new StringTokenizer(source1," ");
+while(st1.hasMoreTokens()){      //가져올 토큰이 있으면 true, 없으면 false 
+System.out.println("st1.token:"+st1.nextToken()); //nextToken: 토큰을 가져오는 역할
+}
+		
+System.out.println();
+System.out.println();
+		
+String source2="푸들,삽살개,풍산개,진돗개";
+StringTokenizer st2=new StringTokenizer(source2,",");
+while(st2.hasMoreTokens()){
+System.out.println("st2.token:"+st2.nextToken());
+		}
+		
+System.out.println();
+System.out.println();		
+
+StringTokenizer st3=new StringTokenizer(source2,",",true); //true: 구분기호(,)를 토큰으로 처리해준다. 
+while(st3.hasMoreTokens()){
+System.out.println("st3.token:"+st3.nextToken());      // st3.token:푸들
+}                                                            // st3.token:,
+````````````````````````````````````````````````````````````             
+  ## String의 split() : 문자를 분열 시켜주는 
+ ``````````````````````````````````````````````````
+1. 한가지 구분일때(@)
+public class SplitEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+// String[] split(String regex)
+		
+		String jumin="900101-1234567";
+		
+		String[] j =jumin.split("-");     //배열 
+		System.out.println("주민번호 앞자리:"+j[0]);
+		System.out.println("주민번호 앞자리:"+j[1]);
+		
+		for(int i=0; i<j.length; i++)  
+			System.out.println(j[i]);
+		
+		for(String s: j)
+			System.out.println(s);  //항상된 포문
+		
+		
+		String tel = "010-1234-5678";
+		String [] t =tel.split("-");
+		System.out.println("전화 번호 앞자리: "+t[0]);
+		System.out.println("전화 번호 중간자리:"+t[1]);
+		System.out.println("전화 번호 뒷자자리:"+t[2]);
+		
+		String email = "totoro@naver.com";
+		String [] e = email.split("@");
+		System.out.println("아이디:"+e[0]);
+		System.out.println("도메인:"+e[1]);
+		
+	}
+
+}
+2. 두개지 이상 구분기호 일때 (&,-,)
+package p2022_07_01;
+
+public class SplitEx1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//p512
+		
+//  String [] split(String regex)
+		String text ="홍길동&이수홍,박연수,김자바-최명호|안화수";
+		
+		String[]names= text.split("&|,|-|");     // |은 여러개를 파싱할때 기호 
+        
+		for(int i=0; i<names.length;i++) {
+			System.out.println(names[i]);
+		}
+		System.out.println();
+		//향상된 for 문 :순차적인 자료구조일때 값을 가져온다. 
+    for(String name :names) {
+    	System.out.println(name);
+    }
+	}
+
+}
+
 
 `````````````````````````````````````````````````````````````````````````
 ##  touppercaes 
@@ -367,7 +510,6 @@ public class JuminCheck {
 
 }
 `````````````````````````
-# StringTokenizer 클래스
 
 
 
@@ -376,20 +518,6 @@ public class JuminCheck {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-String의 split() 메소드 이용
 
 
 
