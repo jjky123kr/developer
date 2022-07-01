@@ -113,7 +113,7 @@ class StringTest01 {
 // 재사용을 하지 못하는 값은 지우고,새로운 변수에 다시 값을 할당해야지 ,재사용이 가능하다. 
 //
 
-```
+`````````````````````````````````````````````````````````````````````````````````````````````
 ## length, char    메소드 
 * length은 문자의 길이를 구하는 역할
 * char은 문자 한글자 추출하는 역할
@@ -170,8 +170,8 @@ public class IndexOfTest {
 	int index6 = message.indexOf( "java" );
 	System.out.println( index6 );
     }
-}
-```````````````````````````````````````````````````````````````````````````````````````
+    
+   
 ### 1.Trim(): 문자열  좌우의 공백을 없애주는 역할 
 ```````````````````````````````````````````````````````````
 package p2022_07_01;
@@ -190,7 +190,7 @@ public class TrimTest {
     }
 }
 // 공백도 메모리에 차지한다. 
-`````````````````````````````````````````````````````````````````````````````````````````````````
+``````````````````````````````````````````````````````````````````````````````````````````````
 ### substring 메소드 
 `````````````````````````````````
 
@@ -214,7 +214,52 @@ public class SubStringTest {
 	System.out.println( str2 );
     }
 }
+```````````````````````````````````````
+### 주민번호 문제
+````````````````
+package p2022_07_01;
 
+import java.util.Scanner;
+
+public class JuminCheck {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//키보드로 주민 번호를 입력받아서 남자인지,여자인지 판별하는 프로그램 작성
+//(단 주민번호 앞자리는 6자리  뒤자리는 7자리 인지를  유효성 검사를 한다.)
+		
+		Scanner sc =new Scanner(System.in);
+		
+		System.out.println("주민번호 앞자리를 입력하세요?");
+		String jumin1 =sc.nextLine();
+		System.out.println("주민번호 뒤자리르를 입력하세요?");
+		String jumin2 =sc.nextLine();
+		
+		String g =jumin2.substring(0,1);//(뒷자릿 추출)
+		
+		if(jumin1.length()!=6) {
+			System.out.println("주민번호 앞자리 6자리를 입력하세요");
+			
+		}else if(jumin2.length()!=7) {
+			System.out.println("주민번호 뒷자리 7자리를 입력하세요");
+			
+		}else if(g.equals("1")|| g.equals("3")) {
+			System.out.println("남자 입니다.");
+		}else if(g.equals("2")|| g.equals("4")) {
+			System.out.println("여자입니다.");
+			
+		}else {
+			System.out.println("똑바로 입력하세요.");
+		}
+		
+		
+		
+		
+		
+	}
+
+}
 
 
 
