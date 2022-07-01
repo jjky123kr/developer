@@ -1,3 +1,5 @@
+# 문자열 클래스 
+
 # String 
 * 문자열 리터럴 동일하다면 String 객체 공유
 *new 연산자를 이용한 String 객체 생성
@@ -5,8 +7,28 @@
 *    String 객체를 생성한 후 번지 리턴
 
 # String 클래스
+* String 객체를 생성한 후에 메소드에 의해서 값의 변화가 일어나면 변경된 값을 힙 메모리 영역에 다시 저장 한다.
+
 ## ==: 참조하는 주소를 비교 
 ```
+String str1 = "자바";
+ String str2 =  new String("자바");
+ String str3 =  new String("자바");
+
+str1          ----->    자바
+ 
+str2          ----->    자바
+
+str3          ----->    자바
+
+
+(Stack영역)            (Heap영역)
+
+
+if(str1 == str2){ //주소값을 비교
+
+}
+
 1. 주소 값이 같다
 	String str1="자바";
 	String str2="자바";
@@ -27,8 +49,7 @@
 	}else {
 	System.out.println("다른 주소");   //다른 주소		
        }
-       
-```
+```````````````````````````       
 ## equals():참조하는 값(데이터)을 비교  (많이 사용하다.)
    
       if(str1.equals(str2)) {     //참조하는 값(데이터)을 비교
@@ -60,8 +81,8 @@
 		
 	}
 ``
-#  String + 가 연결이 왼다.  주소값을이 연결 시킨다. 
-```
+#  String + 가 연결이 한다.  주소값을이 연결 시킨다. 
+
 package p2022_07_01;
 
 public class ConnectString {
@@ -82,8 +103,95 @@ public class ConnectString {
 	
     }
 }
+       
+`
+###  StringBuffer 클래스 (시작 주소 값이 바뀌지 않는다.) 
+````````````````````````````````````````````````````````````````
+1. StringBuffer sb = new StringBuffer("자바");
 
-```
+sb1         ----->	   gemini  is beautiful1004
+
+sb2         ----->
+
+// sb1과 sb2는 같은 내용을 가리키고 있음
+(Stack영역)	                 (Heap영역)
+
+1.package p2022_07_01;
+
+public class StringBufferTest {
+public static void main( String[] args ) {
+
+StringBuffer sb1 = new StringBuffer("gemini");    //생성자
+System.out.println( "sb1.length() : " + sb1.length() );     
+System.out.println( "sb1.capacity() : " + sb1.capacity());    
+
+sb1.append( "A string buffer implements"+ 
+				"a mutable sequence of characters");
+System.out.println( "sb1.length() : " + sb1.length() );
+System.out.println( "sb1.capacity() : " + sb1.capacity());
+
+StringBuffer sb2 = new StringBuffer();          // 생성자  
+System.out.println( "sb2.length() : " + sb2.length() );
+System.out.println( "sb2.capacity() : " + sb2.capacity());
+    }
+}
+
+// 문자를 저장하기 위한 힙메모리 크기 capacity 
+// append 은 동적으로 크기를 늘려준다.   
+// 
+2. StringBuffer 
+public class AppendStringBuffer {
+    public static void main( String[] args ) {
+		
+	// StringBuffer 객체 생성
+	StringBuffer sb1 = new StringBuffer( "gemini" );
+	System.out.println( "sb1 = " + sb1 );
+
+	// StringBuffer sb1에 문자열을 추가해 새로운 객체 생성
+	StringBuffer sb2 = sb1.append( " is beautiful" );
+	System.out.println( "sb2 = " + sb2 );
+	System.out.println( "sb1 = " + sb1 );
+
+	// 정수형 데이타 형을 추가
+	System.out.println( sb1.append( 1004 ));   //sb1와 sb2 는 주소값이 같다. 
+	System.out.println( "sb1 = " + sb1 );      // sb1 = gemini is beautiful1004
+	System.out.println( "sb2 = " + sb2 );      // sb2 = gemini is beautiful1004
+
+	String str = new String(sb1);              // StringBuffer를 String으로 변환
+	System.out.println(str.toUpperCase());     //GEMINI IS BEAUTIFUL1004
+ // string 클래스 중에  매개 변수가 StringBuffer 있어서 StringBuffer를 String으로 변환 가능하다. 
+   
+
+    if (sb1==sb2) {                  // 주소 비교
+    	System.out.println("같은 주소");
+    }else {
+    	System.out.println("다른 주소");
+    }
+    
+    }   
+}
+    sb1에 append는 새로운 공간을 만들지 않고, 기존에 있던거에 추가한다. 
+   기존에 있던 추가 된 것을 sb2에 값에 리턴한다. (시작 주소값 바뀌지 않는다)
+3.   
+//Insert메소드 
+public class InsertStringBuffer {
+    public static void main( String[] args ) {
+	StringBuffer sb1 = new  StringBuffer("gemini is beautiful" );
+	System.out.println( sb1 );
+// 인덱스 10번 위치에 very라는 문자를 삽입 
+	sb1.insert( 10, "very" );
+	System.out.println( sb1 );   // gemini is verybeautiful
+// 인덱스 0번 위치에 1004를 삽입
+	sb1.insert( 0, 1004 );
+	System.out.println( sb1 );  // 1004gemini is verybeautiful
+    }
+}
+ insert 지정된 삽입된 위치에 집어 넣는다.
+``````````````````````````````````````````````````````````````````````````````````````
+##  StringTokenizer 클래스
+````````````````````````
+
+`````````````````````````````````````````````````````````````````````````
 ##  touppercaes 
 ``````````````````````````````````````````````````````````````````````
 package p2022_07_01;
@@ -258,6 +366,30 @@ public class JuminCheck {
 	}
 
 }
+`````````````````````````
+# StringTokenizer 클래스
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+String의 split() 메소드 이용
 
 
 
