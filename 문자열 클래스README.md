@@ -172,8 +172,25 @@ public class IndexOfTest {
 	System.out.println( index6 );
     }
 }
+``````````````````````````````````````````````````````````````````````````````````````
+### 1.Trim(): 문자열  좌우의 공백을 없애주는 역할
+```````````````````````````````````````````````````````````
+package p2022_07_01;
 
+public class TrimTest {
 
+	
+//	1.Trim(): 문자열  좌우의 공백을 없애주는 역할
+//	boolean equals(): 값을 비교하는 역할
+    public static void main( String[] args ) {
+	String str1 = new String( "gemini   " );
+	String str2 = new String( "   gemini " );
+
+	System.out.println( str1.equals( str2 )); // 공백이 있어서 값이 다르게 출력 false +
+	System.out.println( str1.trim().equals( str2.trim())); // 공백을 없애주어서 값이 true
+    }
+}
+// 공백도 메모리에 차지한다. 		
 
 
 
