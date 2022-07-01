@@ -81,7 +81,7 @@ if(str1 == str2){ //주소값을 비교
 		
 	}
 ``
-#  String + 가 연결이 한다.  주소값을이 연결 시킨다. 
+#  String + 연결이 한다.  주소값을이 연결 시킨다. 
 
 package p2022_07_01;
 
@@ -105,7 +105,7 @@ public class ConnectString {
 }
        
 `
-###  StringBuffer 클래스 (시작 주소 값이 바뀌지 않는다.) 
+#  StringBuffer 클래스 (시작 주소 값이 바뀌지 않는다.) 
 ````````````````````````````````````````````````````````````````
 1. StringBuffer sb = new StringBuffer("자바");
 
@@ -188,7 +188,7 @@ public class InsertStringBuffer {
 }
  insert 지정된 삽입된 위치에 집어 넣는다.
 ``````````````````````````````````````````````````````````````````````````````````````
-##  StringTokenizer 클래스 :   문자열 분리 방법
+# StringTokenizer 클래스 :   문자열 분리 방법
 ````````````````````````
 import를 사용해야 한다. (java.uill에 없어서)
 import java.util.*;
@@ -271,7 +271,7 @@ while(st3.hasMoreTokens()){
 System.out.println("st3.token:"+st3.nextToken());      // st3.token:푸들
 }                                                            // st3.token:,
 ````````````````````````````````````````````````````````````             
-  ## String의 split() : 문자를 분열 시켜주는 
+  # String의 split() : 문자를 분열 시켜주는 
  ``````````````````````````````````````````````````
 1. 한가지 구분일때(@)
 public class SplitEx {
@@ -335,7 +335,7 @@ public class SplitEx1 {
 
 
 `````````````````````````````````````````````````````````````````````````
-##  touppercaes 
+#  touppercaes 
 ``````````````````````````````````````````````````````````````````````
 package p2022_07_01;
 
@@ -389,7 +389,7 @@ public class FindBlankIndex {
 배열의 크기는(s).length은 속성 , String은 length(); 문자의 길이(띄어쓰기,"문자등도 같이 ) 
 charAt은 문자 한글자 추출하는 역할 
 ```````````````````````````````````````````````````````````````````````````````````````````
-## Indexof 특정 문자의 인덱스 번호
+# Indexof 특정 문자의 인덱스 번호
 package p2022_07_01;
 
 public class IndexOfTest {
@@ -421,7 +421,7 @@ public class IndexOfTest {
     }
     
 `   
-### 1.Trim(): 문자열  좌우의 공백을 없애주는 역할 
+# 1.Trim(): 문자열  좌우의 공백을 없애주는 역할 
 ```````````````````````````````````````````````````````````
 package p2022_07_01;
 
@@ -440,7 +440,7 @@ public class TrimTest {
 }
 // 공백도 메모리에 차지한다. 
 ``````````````````````````````````````````````````````````````````````````````````
-### substring 메소드 
+# substring 메소드 
 `````````````````````````````````
 
 public class SubStringTest {
@@ -464,7 +464,7 @@ String message = "Java program creates many objects.";
     }
 }
 ```````````````````````````````````````
-### 주민번호 문제
+# 주민번호 문제
 ````````````````
 package p2022_07_01;
 
