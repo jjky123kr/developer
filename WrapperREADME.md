@@ -42,7 +42,7 @@
 
 방법3.    20 -->  20 + ""
 ```````````````````````````
-### 예문 1.int num = Integer.parseInt("20")
+### 예문 1.int num = Integer.parseInt("20") 중요 
 `````````````````````java
 		
 		
@@ -70,9 +70,13 @@
 }
 
 ```````````````````````````````````````````````
-### 예문 2. Integer in01 = new Integer("20");		
-### 	     int num01 = in01.intValue();//언박싱
-###           valueOf 메소드
+### 예문 2.
+* Integer in01 = new Integer("20");		
+* int num01 = in01.intValue();//언박싱
+
+* Integer in01 = new Integer("20");		
+* int num01 = in01.intValue();	
+ 
 ````````````````````````````````````````````````````java
 package p2022_07_04;
 
@@ -152,7 +156,7 @@ public class WrapperEx3 {
 	}
 }
 ```````````````````````````````````
-### 예문 4. double 형
+### 예문 4. double 형  
 ``````````````````````````````````java
 package p2022_07_04;
 
@@ -185,7 +189,7 @@ public class WrapperEx4 {
 
 }
 ````````````````````````````````````````
-### 예문 4. String 형
+### 예문 4. String 형   valueOf
 ````````````````````````java
 package p2022_07_04;
 
