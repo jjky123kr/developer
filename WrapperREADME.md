@@ -140,14 +140,70 @@ public class WrapperEx3 {
 		
 	}
 
+}	}
+
 }
 
 
+
+# 예문3. Double형 일때 
+```````````````````````````````````````````````````java
+
+package p2022_07_04;
+
+public class WrapperEx4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//      Double 클래스는 기본 생성자 지원 안된다. 		
+//		Double d = new Double();  // 오류 발생 
+		
+		Double d1= new Double(3.14);  // 박싱(boxing)
+        Double d11=3.14;              // 자동박싱
+		
+        double n1 = d1.doubleValue();   // 언박싱(unboxing)		
+        double n11 = d1;                // 자동언박싱
+        
+     // 자료형 변환: "42.195"--->42.195    
+        Double d2= new Double("42.195");  // 박싱(string형)
+    //  Double d2="42.195";               // 자동 박싱은 오류 발생 
+        
+        double n2 = d2.doubleValue();     // 언 박싱 
+		double n22=d2;                     // 자동 언 박싱 
+		
+//		자료형 변환:"42.195"--->42.195  
+		double num= Double.parseDouble("42.195");
+		System.out.println("num="+num);
+		
 	}
 
 }
+```````````````````````````
+예문 4.string
+`````````````````````````java
+package p2022_07_04;
 
+public class ValueOfEx {
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+//p511
+//valueof()	:기본 자료형을 문자열로 변환:
+//		      ex) 20---->"20"
+		 
+		String str1= String.valueOf(10);   // 10--->"10"
+		String str2= String.valueOf(10.5); // 10.5-->"10.5"
+		String str3= String.valueOf(true); // true-->"true"
+		
+		
+		System.out.println(str1);
+		System.out.println(str2);
+		System.out.println(str3);
+	}
+
+}
 
 
 
