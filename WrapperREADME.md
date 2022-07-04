@@ -17,6 +17,9 @@
 
 
 * 각 자료형들이 제공은 되지만 거의 int형만 쓴다. Integer가 중요 - 90%이상 Integer 사용
+##### 자료형 변화 
+"20"-->20 문자(String)를 숫자(int) 형
+*	int num = Integer.parseInt("20");
 
 ``````````java
 
@@ -42,7 +45,9 @@
 
 방법3.    20 -->  20 + ""
 ```````````````````````````
-예문
+### 방법1.  int n =Integer.parseInt("20"); 
+* String형을 int형으로 형변환:"20"-->20;
+* int형을 String형 으로 형변환:20-->"20";
 `````````````````````java
 		// TODO Auto-generated method stub
 
@@ -67,6 +72,33 @@
 
 }
 
+package p2022_07_04;
+
+class WrapperTestA {
+  public static void main(String[] args) {
+    int n01=10;
+	int n02;
+	Integer num01 ;  //Integer 객체 생성
+    Integer num02= new Integer(20) ;     // 박싱
+    
+    num01 = n01;               //오토 박싱
+//	num01 = new Integer(n01);  //박싱
+
+    n02   = num02;               //오토 언 박싱
+//	n02   = num02.intValue();   // 언박싱
+
+	System.out.println(n01 + ", " + num01); // 10, 10
+	System.out.println(n02 + ", " + num02); // 20, 20
+
+  }    
+}                                                                                           
+
+
+
+
+
+``````````````````````````
+### 2.방법
 ```````````````````````java
 package p2022_07_04;
 
@@ -94,6 +126,8 @@ public class WrapperEx1 {
 	}
 
 }
+``````````````````````````````````
+## 
 ```````````````````java
 //p529
 //      박싱		
@@ -112,7 +146,10 @@ public class WrapperEx1 {
 	    System.out.println(value2);
 	    System.out.println(value3);
 
-```````````````````````````````````````	 java   
+
+``````````````````````````````````
+## 방법 2
+```````````````````````````````````````	java   
 package p2022_07_04;
 
 public class WrapperEx3 {
@@ -145,8 +182,8 @@ public class WrapperEx3 {
 }
 
 
-
-# 예문3. Double형 일때 
+````````````````````````````````````
+##  예문3. Double형 일때 
 ```````````````````````````````````````````````````java
 
 package p2022_07_04;
@@ -180,7 +217,9 @@ public class WrapperEx4 {
 
 }
 ```````````````````````````
-예문 4.string
+### 예문 4. string  valueOf
+* String 형은 언박싱이 되지 않는다.
+> String 형은 변수가 달라서                    힙메모리  에 갖져 올수 없어서이다. 
 `````````````````````````java
 package p2022_07_04;
 
@@ -204,6 +243,83 @@ public class ValueOfEx {
 	}
 
 }
+````````````````````````````````````
+### 1. 예문: 매개변수 가 달랐을때 오류가 나타난다. 
+ 
+```````````java
+1. 
+
+package p2022_07_04;
+
+class TestClass {
+  private int member;
+  public void setValue(int value){
+    member = value;   //초기화 
+  }
+   public int getValue( ){  
+    return member;   //호출    
+  }                
+}
+class GenericTest01{  
+  public static void main(String[] args) { 
+     TestClass obj01=new TestClass();   // 객체 생성 
+     obj01.setValue(3);
+     System.out.println("되돌리는 값은->" + obj01.getValue( ));
+    
+     obj01.setValue(3.4);
+     System.out.println("되돌리는 값은->" + obj01.getValue( )); // 매개 변수 bouble  만들어야 한다. 
+     obj01.setValue("이해할 수 있다.");                         // 매개 변수가 String 만들어야 한다. 
+     System.out.println("되돌리는 값은->" + obj01.getValue( ));
+  }
+}                                                                                    
+
+
+````````````````````````````````````````````````
+ ## 2.예문 
+
+ >  Object value = new Integer (3);           
+ * 업캐스팅+ 박싱
+ >  Object value =3;                    업캐스팅+ 자동박싱 
+* 업 캐스팅: 자식객체를 부모 객체에 전달 
+* object가 최상위 클래스 이라서 해결  
+* 다운 캐스팅 + 언박싱          
+ >   int n=((Integer)(obj01.getValue())).intValue();   
+       자식(생략 불가)    부모    (제외하면 오토 언박싱)
+````````````````````````````````````` java
+package p2022_07_04;
+
+class TestClass2 {
+  private Object member;
+  public void setValue(Object value){
+    member = value;
+  }
+   public Object getValue( ){  
+    return member;    
+  }                
+}
+class GenericTest02{  
+  public static void main(String[] args) { 
+   TestClass2 obj01=new TestClass2();
+// Object value = new Integer (3);     업캐스팅+ 박싱
+// Object value =3;                    업캐스팅+ 자동박싱  
+  
+   obj01.setValue(3);
+   System.out.println("되돌리는 값은->"+obj01.getValue( ));   //3
+  
+   // 다운 캐스팅 + 언박싱
+    //        자식(생략 불가)    부모       (제외하면 오토 언박싱)
+   int n=((Integer)(obj01.getValue())).intValue();
+   
+   obj01.setValue(3.4);
+   System.out.println("되돌리는 값은->"+obj01.getValue( ));
+
+   obj01.setValue("이해할 수 있다.");
+   System.out.println("되돌리는 값은->"+obj01.getValue( ));
+
+  }
+}                                                                                    
+// object클래스가 모든 클래스의 최상의 클래스라서 ,해결이 된다. 
+// Wrapper은 object가 최상의 (부모클래스)로 가져 와서 해결이 된다. 
 
 
 
