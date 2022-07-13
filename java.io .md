@@ -10,22 +10,24 @@
 문자 기반 입력 스트림의 최상위 클래스로 추상 클래스
 * Writer  
 문자 기반 출력 스트림의 최상위 클래스로 추상 클래스
-
-
-
-
  * import  java.io.*;
 
-#### o 스트림(Stream) : 데이터의 흐름
+
+#### BufferedReader
+#### FileReader
+#### FileWriter
+#### File
+
+#### o 스트림(Stream) : 데이터의 흐름  ( 입력객체, 출력 객체 생성 )
 ```````````````java
-Stream - Byte Stream           	         - 입력 (InputStream)
+Stream - Byte Stream           	         - 입력 (InputStream) // 최상위 클래스 
           (1Byte 단위로 데이터를
-          전송하는 스트림)                 -출력 (OutputStream)
+          전송하는 스트림)                 -출력 (OutputStream)// 최상위 클래스 
 
 
-         Text Stream                     -  입력 (Reader)
+         Text Stream                     -  입력 (Reader) // 최상위 클래스 
          (2Byte 단위로 데이터를
-          전송하는 스트림)                -   출력 (Writer)
+          전송하는 스트림)                -   출력 (Writer)// 최상위 클래스 
 ```````````````````````
 #### o Byte Stream에 관련된 클래스(1Byte 입.출력 처리)
 ````````````````java
@@ -41,16 +43,17 @@ Stream - Byte Stream           	         - 입력 (InputStream)
 	         PrintStream
 	         ObjectOutputStream
 ``````````````````````````````````
-#### o Text Stream에 관련된 클래스(2Byte 입.출력 처리)
+#### o Text Stream에 관련된 클래스(2Byte 입.출력 처리) 가장 많이 사용 
 ````````````````````````````java
-Reader -     BufferedReader
-  (입력)     InputStreamReader - FileReader
+  Reader -   BufferedReader
+  (입력)     InputStreamReader -  FileReader // 파일 불려올때  
 
   Writer -   BufferedWriter
-  (출력)     OutputStreamWriter - FileWriter
+  (출력)     OutputStreamWriter - FileWriter// 파일 생성 
              PrintWriter
 `````````````````````````````````````````````
-### BufferedReader : 1바이트2바이트 가리지 않고, 사용자 입력을 한줄로 출력이 가능하다. (키보드 입력 할때 )
+### BufferedReader : 1바이트2바이트 가리지 않고, 사용자 입력을 한줄로 출력이 가능하다.
+### 표준 입력 장치 (키보드 입력 )
 
 ``````````````````````````````````````````
 예문1.
@@ -113,7 +116,7 @@ public class BufferedReaderEx {
 	}
 ``````````````````````````````````````````````````````````````
 ### FileInputStream: 
-##### 1.예문  FileInputStream
+##### 1.예문  FileInputStream   
 ``````````````````````````````````````java
 package p2022_07_12;
 
@@ -244,7 +247,7 @@ public class FileOutputStreamTest {
     }//main() end
 }
 ``````````````````````````````````````
-## 예문2.  FileReader , FileWriter
+## 예문2.  FileReader , FileWriter 
 ``````````````````````````````````````````````````java
 package p2022_07_12;
 
@@ -327,7 +330,10 @@ public class FileWriterEx {
 	}
 
 }
-
+```````````````````````````````````````````````
+## File 클래스
+* 파일 생성 및 삭제 기능 제공
+* 디렉토리 생성, 디렉토리에 존재하는 파일 리스크 얻어내는 기능 제공
 
 
 
