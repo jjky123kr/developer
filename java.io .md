@@ -338,6 +338,7 @@ public class FileWriterEx {
 > File file = new ("c:/Temp/file.txt"); 
 * 파일 삭세 할때 : delete();
 *File(String parent, String child)  => 부모 디렉토리 , 자식 디렉토리 
+
 ``
 ### 예문
 `````````````````````````````````````````````````java
