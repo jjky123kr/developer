@@ -334,6 +334,79 @@ public class FileWriterEx {
 ## File 클래스
 * 파일 생성 및 삭제 기능 제공
 * 디렉토리 생성, 디렉토리에 존재하는 파일 리스크 얻어내는 기능 제공
+* 파일 객체 생성할때 생성자 이름이 파일 이름 이다. 
+> File file = new ("c:/Temp/file.txt"); 
+* 파일 삭세 할때 : delete();
+*File(String parent, String child)  => 부모 디렉토리 , 자식 디렉토리 
+``
+### 예문
+`````````````````````````````````````````````````java
+package p2022_07_13;
+
+// File 클래스는 데이터들이 입.출력 하면서 사용하는 파일이나
+// 디렉토리 체제를 관리하는 클래스임.
+
+import java.io.*;
+
+public class FileTest {
+
+    public static void main( String[] args ) {
+	try {
+	    // File 객체 생성
+		// c:/java01/temp 폴더가 생성되고, 현 위치 하위에 
+		//  test폴더가 생성됨      부모디렉토리    자식 디렉토리
+	    File temp = new File( "C:/java01", "temp" );
+	    File tempFile = new File( "test" ); // 디렉토리 명 
+                                
+	    // 디렉토리 생성(mkdirs()는 디렉토리를 만들면 true를 
+		// 반환함)
+	    System.out.println( "create directory state : " + temp.mkdirs() ); // 디렉토리(폴더)생성되면 true 값을 리턴 
+	    System.out.println( "create directory state : " + tempFile.mkdirs() );  
+	    
+	    // 1.디렉토리 삭제 : 비어있는 디렉토리 삭제됨 
+	    tempFile.delete();  // test 디렉토리 삭제 
+	    
+	    // 2. 비어있지 않는 디렉토리 삭제 
+//      
+//        for(int i=0; i<.length(); i++)
+//	    int [i]= tempFile 
+	    tempFile.deleteOnExit();    
+	    
+	  
+	    //3. 자식 티렉토리 삭제
+	    temp.delete();  // temp디렉토리 삭제됨 
+	    
+	    //4. 부모 디렉토리 삭제 
+	    temp.getParentFile().delete();// "C:/java01" 디렉토리 삭제 
+	    
+
+	    // File 클래스에서 제공하는 메소드로 파일 시스템에 대한 
+		// 여러가지 정보를 얻을수 있음
+		
+	    System.out.println( "temp canRead : " + temp.canRead() );// 읽기 
+	    System.out.println( "temp canWrite : " + temp.canWrite() );// 쓰기 
+	    System.out.println( "temp getAbsoluteFile : " + temp.getAbsoluteFile());// 절대 경로 값 : C:\java01\temp
+	    System.out.println( "temp getName : " + temp.getName() ); // 파일이 있으면, 파일명, 없으면, 폴더명
+	    System.out.println( "temp getParent : " + temp.getParent() );// 부모 디렉토리 
+	    System.out.println( "temp getPath : " + temp.getPath() );// 전체 경로 구해 온다. 
+	    System.out.println( "temp isDirectory : " + temp.isDirectory() );// 디렉토리가 판별 
+	    System.out.println( "temp isFile : " + temp.isFile() ); //파일이 있으면 true
+        } catch ( Exception e ) {
+	}
+    }
+}
+
+
+// c 드라이브 하위에 java01이 있고, 거기에 temp 가 생성 된다. 
+// File tempFile = new File( "test" ); 파일이 위치가 지정되어 있지 않으면, 현재 프로젝트에 생성된다. 
+// mkdirs();메소드는 파일이 생성되면,true 하지만 다시 실행하면, false 값으로 리턴 
+// 예외처리 형식을 갖추지 않아도 된다. 
+
+
+````````````````````````````````````````````````````````````````````````````````
+### 객체 직렬화  ObjectInputStream, ObjectOutputStream
+객체를 일렬로 세워서 객체를 불려온다. 
+
 
 
 
