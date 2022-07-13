@@ -18,36 +18,36 @@
 
 #### o 스트림(Stream) : 데이터의 흐름
 ```````````````java
-Stream - Byte Stream           	     -  입력 (InputStream)
+Stream - Byte Stream           	         - 입력 (InputStream)
           (1Byte 단위로 데이터를
-          전송하는 스트림)                 출력 (OutputStream)
+          전송하는 스트림)                 -출력 (OutputStream)
 
 
-         Text Stream                -  입력 (Reader)
+         Text Stream                     -  입력 (Reader)
          (2Byte 단위로 데이터를
-          전송하는 스트림)        -   출력 (Writer)
+          전송하는 스트림)                -   출력 (Writer)
 ```````````````````````
 #### o Byte Stream에 관련된 클래스(1Byte 입.출력 처리)
 ````````````````java
 
   InputStream  - FileInputStream
-  (입력)         FilterInputStream  -  BufferedInputStream
-	               DataInputStream  		       	           	   
+  (입력)         FilterInputStream      -  BufferedInputStream
+	         DataInputStream  		       	           	   
                  bjectInputStream
 
   
   OutputStream - FileOutputStream
-  (출력)              FilterOutputStream  -  BufferedOutputStream    		 				                DataOutputStream
-	           PrintStream
-	           ObjectOutputStream
+  (출력)         FilterOutputStream       -  BufferedOutputStrea   DataOutputStream
+	         PrintStream
+	         ObjectOutputStream
 ``````````````````````````````````
 #### o Text Stream에 관련된 클래스(2Byte 입.출력 처리)
 ````````````````````````````java
-Reader - BufferedReader
+Reader -     BufferedReader
   (입력)     InputStreamReader - FileReader
 
-  Writer - BufferedWriter
-  (출력)    OutputStreamWriter - FileWriter
+  Writer -   BufferedWriter
+  (출력)     OutputStreamWriter - FileWriter
              PrintWriter
 `````````````````````````````````````````````
 ### BufferedReader : 1바이트2바이트 가리지 않고, 사용자 입력을 한줄로 출력이 가능하다. (키보드 입력 할때 )
@@ -78,7 +78,9 @@ BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //
 	}
     }//main() end
 }
-
+``````````````````````````````````````````````````
+#### 예문 응용문제
+`````````````````
 package p2022_07_12;
 
 import java.io.BufferedReader;
@@ -111,8 +113,7 @@ public class BufferedReaderEx {
 	}
 ``````````````````````````````````````````````````````````````
 ### FileInputStream: 
-`````````````````````````````
-1.예문    FileInputStream
+##### 1.예문  FileInputStream
 ``````````````````````````````````````java
 package p2022_07_12;
 
@@ -158,8 +159,8 @@ public class FileInputStreamTest {
 //한 글자 씩 읽어와서, 10 진수 아스키코드로 저장한다. (InputValue)그다음에 형변환 ((char) inputvalue)변환 
 //더이상 읽어올 글자가 없을면 -1을 리턴을 한다. != -1 While문을 바쪄나온다. 
 
-```````````````````````````````
-예문2.FileReader
+````````````````````````````````````````````````````````````````
+### 예문2.FileReader
 * 2바이트 문자를 데이터를 읽어온다. 
 ````````````````````````````````````````````````java
 package p2022_07_12;
@@ -199,8 +200,8 @@ public class FileReaderTest {
 }
 //FileReader 객체 생성이 되면  파일을 닫아야한다. finally은 초기값이 null 값이 있으면, 닫을 수 없다. 그래서 예외처리를 해야 한다.
 //FileReader 2바이트 문자 입력도 읽어온다. 
-``````````````````````````
-* FileWriter 출력을 만들어서, 파일로 저장한다. 
+`````````````````````````````````````````````````````````
+## FileWriter 출력을 만들어서, 파일로 저장한다. 
 `````````````````````````````````java
 package p2022_07_12;
 
@@ -242,9 +243,9 @@ public class FileOutputStreamTest {
 	}
     }//main() end
 }
-````````````````````````````````````java
-예문2.FileReader , FileWriter
-``````````````````````````````````````````````````
+``````````````````````````````````````
+## 예문2.  FileReader , FileWriter
+``````````````````````````````````````````````````java
 package p2022_07_12;
 
 import java.io.*;
