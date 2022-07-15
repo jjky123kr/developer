@@ -99,7 +99,7 @@ REVOKE(데이터베이스에 대한 일련의 권한 취소)
 `
 ## DML명령
 ### 1.o 테이블 생성
-* 데이터 타입: 숫자 member , 문자varchar2, 날짜 Date
+* 데이터 타입: 숫자 number , 문자varchar2, 날짜 Date
   SQL> create table 테이블명 (컬럼명  데이터타입, 
 		              컬럼명  데이터타입, ......);
   SQL> create table member01(
