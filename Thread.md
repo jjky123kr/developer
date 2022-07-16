@@ -92,6 +92,7 @@ public class RunnableTest implements Runnable {
     }
     
 }
+<<<<<<< HEAD
 
 package p2022_07_11;
 
@@ -163,6 +164,9 @@ public class ThreadSleep implements Runnable {
 
 
 
+=======
+``````````````
+>>>>>>> 7e9f3e4e24c54f36c96a6c3a30bd17f33b64c154
 
 
 
