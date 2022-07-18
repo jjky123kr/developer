@@ -65,7 +65,7 @@ public class ThreadEnd extends Thread {
 // 1.방법을 사용 못할때는 다중 상속인 경우에 사용하지 못한다. 
 ``````````````````````````````````````````
 ## 예문2.:	Runnable 인터페이스를 상속받아서 만드는 방법
-``````````````
+``````````````java
 package p2022_07_11;
 
 public class RunnableTest implements Runnable {
@@ -92,7 +92,81 @@ public class RunnableTest implements Runnable {
     }
     
 }
+<<<<<<< HEAD
+
+package p2022_07_11;
+
+public class ThreadSleep implements Runnable {
+   
+	public void run() {
+	for( int i=1 ; i<10 ; i++ ) {
+	    // 현재 CPU를 점유한 Thread 출력
+	   System.out.println( Thread.currentThread().getName() 
+										+" : " + i );
+
+		try {
+			//sleep() 메소드를 사용해 프로그래머가 강제로 
+			// block 상태로 만듦.
+		    // 1초 동안 thread을 block 상태에 빠트림
+		    Thread.sleep( 1000 ); //(단위: 1/1000 초) 정적메소드 
+		} catch ( InterruptedException ie ) {		    
+		    System.out.println( ie.toString() );
+		}
+	}//for end
+    }// run() end
+
+    public static void main( String[] args ) {
+		ThreadSleep ts = new ThreadSleep();
+		
+		// 두 개의 Thread를 생성시켜 실행시킴
+		// 2개의 Thread가 동일한 우선 순위로 실행됨.(5인 상태)		
+		Thread first  = new Thread( ts, "first1" );
+		Thread second = new Thread( ts, "second1" );
+		first.start();
+		second.start();
+    }
+}
+```````````````````````````````````
+###  Thread의 동기화 기법
+
+   한 번에 하나의 쓰레드만 객체에 접근할 수 있도록 객체에 
+   락(lock)을 걸어서 데이터의 일관성을 유지하는 것.
+
+스레드의 동작에 의해서 동시에 여러작업이 가능하지만 인출 작업과 같이 특정 작업에 대해서는 하나의 스레드만이 동작하도록 해야한다.  
+이렇게 멀티스레드 프로그램에서 하나의 스레드에 의해서만 처리할 수 있도록 하는 영역을 임계영역(Critical Section)이라고 한다.  
+임계영역으로 지정하기 위해서는 하나의 스레드가 이 영역에 진입할때 락을 걸어서 다른 스레드가 수행하지 못하도록 하고,   
+이 영역에서 벗어날 경우 락을 해제하여 다른 스레드가 수행하도록 한다.   
+즉, 임계영역 내에서만은 한번에 하나의 스레드만이 동작하도록 제약을 주어야 한다.  
+이러한 제약을 위해서 자바에서는 동기화 기법을 제공하는데 하나의 스레드만 동작하도록 하고자 하는 메서드나 블록에 synchronized 로 지정한다.  
+
+
+1. 메소드의 동기화 방법(메소드에 lock 을 설정)
+    public  synchronized  void  Method(){
+      임계영역 처리구문
+    }
+
+2. 특정 블록의 동기화 방법 (특정 객체에 lock 을 설정)
+    public  void  Method(){
+
+        synchronized(동기화할 객체 또는 동기화할 클래스명){
+            임계영역 처리구문
+        }
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+=======
 ``````````````
+>>>>>>> 7e9f3e4e24c54f36c96a6c3a30bd17f33b64c154
 
 
 
