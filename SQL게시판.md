@@ -42,41 +42,41 @@ import java.sql.PreparedStatement;
 
 public class InsertBoard {
 
-	public static void main(String[] args) {
+public static void main(String[] args) {
 		// TODO Auto-generated method stub
  
-	Connection con = null; 
-	PreparedStatement pstmt =null; 결과 값 
+Connection con = null; 
+PreparedStatement pstmt =null; 결과 값 
 	
 	String driver ="oracle.jdbc.driver.OracleDriver";
 	String url= "jdbc:oracle:thin:@localhost:1521:xe";
 	
 	try {
-		Class.forName(driver); // 드라이버 로딩 
-		con= DriverManager.getConnection(url, "scott", "tiger");
+	Class.forName(driver); // 드라이버 로딩 
+	con= DriverManager.getConnection(url, "scott", "tiger");
         // 여기까지 DB연동 할때 공통 작업 		
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); // 입력 객체  
 	
-	System.out.print("작성자명을 입력하세요?"); // 컬럼 명와 일치 하게 작성 
-	String writer =br.readLine();
-	System.out.print("비밀번호를 입력하세요?");
-	String passwd= br.readLine();
-	System.out.print("제목을 입력하세요?");
-	String subject= br.readLine();
-	System.out.print("내용을 입력하세요?");
-	String content= br.readLine();
+System.out.print("작성자명을 입력하세요?"); // 컬럼 명와 일치 하게 작성 
+String writer =br.readLine();
+System.out.print("비밀번호를 입력하세요?");
+String passwd= br.readLine();
+System.out.print("제목을 입력하세요?");
+String subject= br.readLine();
+System.out.print("내용을 입력하세요?");
+String content= br.readLine();
 	
 	// SQL 문법 
 	String sql= "insert into board ";
 	       sql+="values(board_seq.nextval,?,?,?,?,sysdate)";
 // 넘버 숫자 출력해서 borard_seq.nextval 저장 
-	pstmt =con.prepareStatement(sql);	// 실행문: pstmt객체 설정 
-	pstmt.setString(1,writer); // setString (넘버,컬럼)
-	pstmt.setString(2,passwd); // 
-	pstmt.setString(3,subject); // 
-	pstmt.setString(4,content); // 
-	int result= pstmt.executeUpdate();//SQL문 실행 코드 (executeUpdate)
-	if(result==1) {
+pstmt =con.prepareStatement(sql);	// 실행문: pstmt객체 설정 
+pstmt.setString(1,writer); // setString (넘버,컬럼)
+pstmt.setString(2,passwd); // 
+pstmt.setString(3,subject); // 
+pstmt.setString(4,content); // 
+int result= pstmt.executeUpdate();//SQL문 실행 코드 (executeUpdate)
+if(result==1) {
 		System.out.println("글작성 성공");
 	}else {
 		System.out.println("글작성 실패");
@@ -182,5 +182,147 @@ System.out.println();
 
 }
 ``````````````````````````````````````````````````````````````````````
+Update 수정 
+````java
+package p2022_07_18;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class UpdateBoard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	Connection con=  null;
+	PreparedStatement pstmt = null;
+	
+	 String driver ="oracle.jdbc.driver.OracleDriver";
+	 String url= "jdbc:oracle:thin:@localhost:1521:xe";
+		
+	 try {
+		 
+		 Class.forName(driver);
+		 con = DriverManager.getConnection(url, "scott", "tiger");
+		 
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+System.out.print("수정할 글 번호를 입력 하세요?");
+int no= Integer.parseInt(br.readLine()); // 형변환(문자 -->숫자) 
+System.out.print("작성자명를 입력 하세요?");
+String writer =br.readLine();
+System.out.print("비밀번호를 입력 하세요?");
+String passwd= br.readLine();
+System.out.print("제목을 입력하세요?");
+String subject= br.readLine();
+System.out.print("내용을 입력하세요");
+String content = br.readLine();
+		
+	String sql="update board set writer=?,passwd=?,subject=?,";
+	sql+="content=? ,reg_date=sysdate where no=?";
+	    
+	pstmt = con.prepareStatement(sql);
+		
+	pstmt.setString(1, writer);
+	pstmt.setString(2, passwd);
+	pstmt.setString(3, subject);
+	pstmt.setString(4, content);
+	pstmt.setInt(5, no);
+		
+	int result =pstmt.executeUpdate();// SQL문 실행 
+	if(result==1) {
+			System.out.println("수정이 성공.");
+		}else {
+			System.out.println("수정이 실패.");
+		}
+	 }catch(Exception e) {
+		 e.printStackTrace();
+	 }finally {
+	
+		 try {
+			 if(pstmt!= null)pstmt.close();
+			 if(con!= null)con.close();
+		 }catch(Exception e) {
+			 e.printStackTrace();
+		 }
+	 
+		 
+	 }
+				
+	}
+
+	}
+`````
+### Delete
+``````````java
+package p2022_07_18;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+public class DeleteBoard {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+  Connection con = null;
+  PreparedStatement pstmt = null;
+  
+	 String driver ="oracle.jdbc.driver.OracleDriver";
+	 String url= "jdbc:oracle:thin:@localhost:1521:xe";
+	 
+	try {
+		 
+	Class.forName(driver);
+	con= DriverManager.getConnection(url, "scott", "tiger");
+		
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+	System.out.print("삭제할 글 번호 입력하세요");
+		
+	int no= Integer.parseInt(br.readLine()); 
+		
+	String sql= "delete from board where no = ?";
+		
+	  pstmt = con.prepareStatement(sql);
+	   pstmt.setInt(1, no);
+	    
+	  int result = pstmt.executeUpdate(); // SQL실행
+	  if(result==1) {
+	    System.out.println("글 삭제 성공");
+	 }else{
+	    System.out.println("글 삭제 실패");
+	  }
+		
+	 }catch(Exception e) {
+		 
+	 }finally {
+		 
+		 
+		 try {
+			 if(pstmt !=null)pstmt.close();
+			 if(con !=null)con.close();
+			 
+		 }catch(Exception e) {
+			 
+			e.printStackTrace();									 
+		
+		 }
+		 
+	   }
+  				
+	 }
+
+ }
+``````````````````````````
 
 
