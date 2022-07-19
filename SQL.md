@@ -52,7 +52,7 @@ ENAME             VARCHAR2(10)    10바이트 저장
 JOB               VARCHAR2(9)  
 MGR               NUMBER(4)       사원 번호 4 
 HIREDATE          DATE            날짜 (yyyy/mm/dd)
-SAL               NUMBER(7,2)     숫자값 자료형 (전체 자리수 7자리, 소수점 자리2 )
+SAL               NUMBER(7,2)     숫자값 자료형 (전체 자리수, 소수점 자리 할당 2자리 )
 COMM              NUMBER(7,2)     영업사원이 받는 돈
 DEPTNO            NUMBER(2)       부서 번호2 
 `````````````````````````````````````````
