@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ### 네트워크 IP
 여러 대의 컴퓨터 통신 회선으로 연결한것 
 IV4
@@ -72,9 +72,9 @@ pop3(메일 수신) : 110
 * 1. 도메인을 주소를 숫자로 변환
 * 2. 숫자 도메인을 주소로 변환 
 ### TCP 
-ServerScoket 과 Socket 용도
+1.ServerScoket 과 Socket 용도
 
-서버에서는 Socket를 설정 
+2.서버에서는 Socket를 설정 
 
 
 
@@ -94,4 +94,4 @@ ServerScoket 과 Socket 용도
 
 
 
->>>>>>> 7e9f3e4e24c54f36c96a6c3a30bd17f33b64c154
+
