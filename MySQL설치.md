@@ -5,11 +5,11 @@ My SQL 8.0설치
 설치 과정에서 root 계정 비밀번호 등록 
 
 설치 후 path 혼경 설정 
-MySQL 설치 경로 까지 path 설정  
-C:\Program Files\MySQL\MySQL Server 8.0\bin   
-내PC – 오른마우스(속성) – 고급시스템 설정 – 고급Tab – 환경변수  
-시스템 변수 path 편집 새로 만들기   
-C:\Program Files\MySQL\MySQL Server 8.0\bin 등록 한다.   
+1. MySQL 설치 경로 까지 path 설정  
+2. C:\Program Files\MySQL\MySQL Server 8.0\bin   
+3. 내PC – 오른마우스(속성) – 고급시스템 설정 – 고급Tab – 환경변수  
+4. 시스템 변수 path 편집 새로 만들기   
+5. C:\Program Files\MySQL\MySQL Server 8.0\bin 등록 한다.   
 일반 계정 등록  하는 법   
  1.MySQL8.0 command Line Client 클릭 후 비밀번호 등록   
  
@@ -28,5 +28,15 @@ JDBC Driver download
 <https://dev.mysql.com/downloads/connector/j/>
  
 드라이브 파일을 자바 에 설치한 곳에 저장
+
+
+<img width="978" alt="제목 없음" src="https://user-images.githubusercontent.com/107549149/179664779-e2a32043-74f0-4f22-94bb-2bf491a317b3.png">
+
+MySQL패키지 생성  하고, MySQL 에서 설정을 해준다. 
+<img width="942" alt="이클립스 1" src="https://user-images.githubusercontent.com/107549149/179664521-1e65ce4a-32fd-414b-81c8-4794d51aa7f0.png">
+
+MySQL과 연결 되었는지 확인
+<img width="943" alt="제목 없음 png3" src="https://user-images.githubusercontent.com/107549149/179665437-a7319159-9c82-4d38-ba36-c908caba4c3e.png">
+
 
 

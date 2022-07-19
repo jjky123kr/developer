@@ -1,6 +1,7 @@
 
 ## 자바에서 SQL문 DB연동 예제1.
-````````````````````````````````````````````````````````````````java
+
+``````````````````````````````````java
 1. 데이터 테이블 만들기
 create table customer( no number(4)  primary key, 
 		       name varchar2(20),
@@ -14,8 +15,8 @@ alter table customer add(reg_date timestamp);
 create sequence customer_no_seq
 	start with 1
 	increment by 1;
-
-					       
+```````````````````````````````````````````````````````````
+````java
 
 1. insert 입력
 package p2022_07_15;
@@ -95,7 +96,8 @@ class JDBC_Insert01 {
 		}
 	}
 }
-
+```````````````````````````````````````````````````````````
+````````````````````````java
 2. Select 출력 (저장된 데이터 )
 package p2022_07_15;
 
@@ -166,6 +168,8 @@ class JDBC_Select01 {
 		}
 	}
 }
+````````````````````````````````````````````````````````````````
+`````````````````````````````````java
 3.Update 수정 
 package p2022_07_15;
 
@@ -230,6 +234,8 @@ public static void main(String[] args) {
     }
   }
 } 
+```````````````````````````````````````````````````````````````````
+`````````````````````````````````````````java
 4.Delete 삭제 
 package p2022_07_15;
 
@@ -507,6 +513,7 @@ public static void main(String[] args) {
     }
   }
 } 
+
 4.
 package p2022_07_15;
 
