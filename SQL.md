@@ -102,3 +102,4 @@ DEPTNO            NUMBER(2)       부서 번호2
 
 
 
+
