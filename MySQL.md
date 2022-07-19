@@ -110,7 +110,6 @@ public class InsertBoard {
 `````````````````````````````````````
 Selet 검색  
 
-
 > linit 연산자 사용  
 검색형식: limit 추출할 인덱스 번호 , 추출할 데이터 갯수  
 select * from board order by no desc limit 2,3; //내림 차순(desc) 
