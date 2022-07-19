@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # java.io.*(BufferedReader,FileReader,FileWriter,File)
 * 자바의 기본적인 데이터 입출력(IO: Input/Output) API 제공
 * 바이트 기반 스트림과 문자 기반 스트림
@@ -290,40 +290,6 @@ public class FileWriterTest {
 
 }
 		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 =======
 # java.io.*(BufferedReader,FileReader,FileWriter,File)
 * 자바의 기본적인 데이터 입출력(IO: Input/Output) API 제공
@@ -382,7 +348,7 @@ Stream - Byte Stream           	         - 입력 (InputStream) // 최상위 클
 ### BufferedReader : 1바이트2바이트 가리지 않고, 사용자 입력을 한줄로 출력이 가능하다.
 ### 표준 입력 장치 (키보드 입력 )
 
-``````````````````````````````````````````
+``````````````````````````````````````````java
 예문1.
 package p2022_07_12;
 
@@ -740,7 +706,7 @@ public class FileTest {
  입.출력하는 것을 방지해 준다.
 
 *예문1.
-``````````````````
+``````````````````java
 package p2022_07_13;
 
 //객체 직렬화: 각 사람에 대한 객체를 만들어 놓고 객체 단위로 
