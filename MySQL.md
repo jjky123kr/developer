@@ -5,10 +5,8 @@ MySQL을 생성해준다.
 테이블 만드는 방법
 ```
 1. insert (데이터 입력)
-
 형식:  insert into 테이블명(컬럼1, 컬럼2,..) values(데이터1, 데이터2,...);
-
- insert into 테이블명 values(데이터1, 데이터2,...);
+       insert into 테이블명 values(데이터1, 데이터2,...);
 ```
 ## DML명령어
 ###  숫자형
@@ -110,7 +108,13 @@ public class InsertBoard {
 
 }
 `````````````````````````````````````
-Selet 검색 
+Selet 검색  
+
+
+> linit 연산자 사용  
+검색형식: limit 추출할 인덱스 번호 , 추출할 데이터 갯수  
+select * from board order by no desc limit 2,3; //내림 차순(desc) 
+select * from board order by no asc  limit        오름차순(asc)  
 `````````````````java
 
 import java.sql.Connection;

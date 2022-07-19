@@ -30,28 +30,3 @@ JDBC Driver download
 드라이브 파일을 자바 에 설치한 곳에 저장
 
 
-###  숫자형
-int 
-auto_incrment :
-### 2.문자형
-char  
-varchar  
-text  
-### 3. 날짜, 시간형
-date  
-time  
-datetime  
-timestamp  
-
-sysdate(); 
-
-###  MySQL Workbench 사용
-테이블 생성  
-create table member(  
-id varchar(20),  
-name varchar(20),  
-email varchar(20),    
-address varchar(100);  
--- 테이블 목록 확인
-show tables;
-
