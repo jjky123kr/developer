@@ -32,7 +32,7 @@ select  - Objsect select() :  검색한 결과가 1개일떄 (DTO객체)
            List   select()  : 검색한 결과가 2개 이상일떄 사용(List 객체)
 ```
 ### MVC 흐름
-![웹 캡처_18-9-2022_15241_](https://user-images.githubusercontent.com/107549149/190888145-dc4fc3bb-8f71-4796-b024-92cebf544f5c.jpeg){: width="500" height="500"}
+<img src="https://user-images.githubusercontent.com/107549149/190888145-dc4fc3bb-8f71-4796-b024-92cebf544f5c.jpeg" width="600" height="300">
 
 * 클라이언트의 요청 
 * Controller(servlet)에서 어느 service 로 갈지 결정된다.
