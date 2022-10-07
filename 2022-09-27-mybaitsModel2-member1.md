@@ -1,19 +1,4 @@
----
-layout: single
-title : Mybaits와 Model2 회원가입
-folder: "spring"
-categories: 
-      -Spring
-tags: [blog,Spring]
-author_profile: true
-sidebar:
-nav: "docs"
-
-toc: ture
-toc_alble: 목록
-toc_icon: "bars"
-toc_sticky: true
----
+# Mybaits와 Model2 회원가입
 
 ### Mybatis 데이터 액세스 계층 흐름
 
