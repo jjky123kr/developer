@@ -3,7 +3,7 @@ layout: single
 titel: Javascript 과제 
 category: javascript 
 ---
-
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,7 @@ document.write(lotto);
 </script>
 </body>
 </html>
-
+```
 
 
 
